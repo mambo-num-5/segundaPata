@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 // mongoose.createConnection('mongodb://user:pass@localhost:port/database');
-mongoose.connect('mongodb://127.0.0.1:27017/tragon');
+mongoose.connect('mongodb://127.0.0.1:27017/segundaPata');
 
 // mongoose.connect(uri);
 
