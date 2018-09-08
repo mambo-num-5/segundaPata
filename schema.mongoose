@@ -1,7 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-var  = new Schema(
+var schema = new Schema(
 {
   id: ObjectId
   username: string,
@@ -16,6 +13,3 @@ var  = new Schema(
           }
         ]
 });
-
-exports.Users = mongoose.model('user', userSchema);
-exports.Vendors = mongoose.model('v')
