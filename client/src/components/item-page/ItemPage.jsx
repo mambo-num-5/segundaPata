@@ -1,11 +1,11 @@
 import React from "react";
 
-const ItemPage = () => {
+const Error = () => {
   return (
     <div>
     Item Page bitches
     </div>
   );
-}
+};
 
-export default ItemPage;
+export default Error;
