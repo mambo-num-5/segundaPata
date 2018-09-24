@@ -7,9 +7,11 @@ const Navigation = () => {
 
     <nav className="headerStyle">
           <ul>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/Upload">Upload</NavLink>
-        
+          <NavLink to="/">Casa</NavLink>
+          <NavLink to="/Upload">agregar</NavLink>
+          <NavLink to="/Info">Aprende mas de tu Mascota</NavLink>
+          <NavLink to="/Converter">Currency Converter</NavLink>
+
           </ul>
     </nav>
    </div>

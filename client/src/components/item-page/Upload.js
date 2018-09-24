@@ -24,13 +24,13 @@ class Upload extends React.Component {
 
   render() {
     return (
-      
+
       <div className = "data">
       <form onSubmit={this.props.handleUpload}>
         <label className = "data">
         Categoria:
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Clother">Clothes</option>
+            <option value="Clothes">Clothes</option>
             <option value="Toys">Toys</option>
             <option value="Beds">Beds</option>
             <option value="Accessories">Accessories</option>

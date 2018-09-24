@@ -20,26 +20,26 @@ html, body{
 
 h1 {
   position: relative;
-  color: #139AA7;
+  color: 	#008080;
 
 }
 h2 {
   position: relative;
-  color: #DA8A71;
+  color: 	#4682B4;
 
 
 }
 h3 {
   position: relative;
-  color: #861604;
+  color: #black;
 }
 h4 {
   position: relative;
-  color: #041D71;
+  color: #00FFFF;
 }
 
 .headerStyle {
-  background-color: #A2C5C9;
+  background-color: #4169E1;
   overflow: hidden;
   text-align:center;
 
@@ -63,7 +63,7 @@ h4 {
 
   p { margin: 2em; }
   button{font-size: 17px;}
-button { background-color: #F2C7D6; color: #35424B; }
+button { background-color:#DB7093; color: #FFFFFF; }
 button:hover { background-color: LightSteelBlue; }
 button:active { background-color: SteelBlue; color: White;
 
@@ -81,8 +81,10 @@ button:active { background-color: SteelBlue; color: White;
 
      img {
     border-radius: 50px;
-    vertical-align: text-top;
+   vertical-align: text-top;
 }
+
+
 
 .itemspage h2 {
   color: #35424B;
@@ -96,6 +98,18 @@ button:active { background-color: SteelBlue; color: White;
   transition: all 0.3s;
   width: 30%
  }
+
+   .num {
+      color: black;
+      font-size: 1.5rem;
+   }
+   .btn {
+   background-image: url("https://beginnersbook.com/wp-content/uploads/2013/09/fblike1.jpg");
+   background-size: 60px;
+   padding: 15px 28px;
+   border-width: 25;
+ }
+
  .itemspage h3 {
    color: #35424B;
    background: #F2C7D6;
@@ -109,7 +123,7 @@ button:active { background-color: SteelBlue; color: White;
    width: 30%
   }
   .itemspage h4 {
-  color: #35424B;
+  color: #00008B;
   background: #FDE8D7;
   border:none;
   border-radius: 0.3rem;
@@ -148,7 +162,7 @@ button:active { background-color: SteelBlue; color: White;
 
      footer{
   align-self: flex-end;
-  background-color: #9B7777;
+  background-color: #FFFFFF;
   line-height: 5;
   text-align: center;
   margin-top:10vw;
@@ -157,5 +171,13 @@ button:active { background-color: SteelBlue; color: White;
  }
 
   footer h3 {
-  color:#E3E1D0;
+  color:#4169E1;
  }
+
+   .footer-copyright {
+     background-color: white;
+   }
+
+.infone body{
+  background-image: url("https://www.robertharding.com/preview/1010-3813/diver-surrounded-galapagos-sharks-carcharhinus-galapagensis-red-snapper/");
+}

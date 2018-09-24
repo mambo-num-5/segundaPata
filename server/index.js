@@ -1,92 +1,122 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var items = require('../database/index.js');
-var app = express();
+var item = require('../database/index.js');
+var app = express()
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client/dist'));
 
 
 app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
-      res.sendStatus(500);
-    } else {
-      console.log("get all items request performed")
-      res.json(data);
-    }
-  });
+ item.selectAll(function(err, data) {
+   if(err) {
+     res.sendStatus(500);
+   } else {
+     console.log("get all items request performed")
+     res.json(data);
+  }
+ });
 });
 app.get('/toys', function (req, res) {
-  items.selectToys(function(err, data) {
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      console.log("get all toys request performed")
-      res.json(data);
-    }
-  });
+ item.selectToys(function(err, data) {
+   if(err) {
+     console.log(err);
+     res.sendStatus(500);
+   } else {
+     console.log("get all toys request performed")
+     res.json(data);
+   }
+ });
 });
 
 app.get('/clothes', function (req, res) {
-  items.selectClothes(function(err, data) {
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
+ item.selectClothes(function(err, data) {
+   if(err) {
+     console.log(err);
+     res.sendStatus(500);
+   } else {
+     res.json(data);
+   }
+ });
 });
 
 app.get('/beds', function (req, res) {
-  items.selectBeds(function(err, data) {
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
+ item.selectBeds(function(err, data) {
+   if(err) {
+     console.log(err);
+     res.sendStatus(500);
+   } else {
+     res.json(data);
+   }
+ });
 });
 
 app.get('/accesories', function (req, res) {
-  items.selectAccesories(function(err, data) {
-    if(err) {
-      console.log(err);
-      res.sendStatus(500);
-    } else {
-      console.log("get all accesories request performed")
-      res.json(data);
-    }
-  });
+ item.selectAccesories(function(err, data) {
+   if(err) {
+     console.log(err);
+     res.sendStatus(500);
+   } else {
+     console.log("get all accesories request performed")
+     res.json(data);
+   }
+ });
 });
 
+// app.get('/like', function (req, res) {
+//   item.likeSaver(function(err, data) {
+//     if(err) {
+//       console.log(err);
+//       res.sendStatus(500);
+//     }
+//     else {
+//       console.log("get all likes request performed");
+//       res.json(data);
+//     }
+//   });
+// });
+
+app.post('/likes', function(req, res) {
+ let gustos = req.body.likes;
+ console.log("hello",gustos);
+ if (!gustos) {
+    res.sendStatus(400);
+ } else {
+
+   item.insertLikes(gustos, (err, results) => {
+     if (err) {
+       console.log(err)
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   });
+  }
+});
 
 app.post('/items', function(req, res) {
-  let name = req.body.name;
-  let descrip = req.body.descrip;
-  let price = req.body.price;
-  let category = req.body.category;
-  let email = req.body.email;
-  let vendor = req.body.vendor;
-  console.log(name);
-  if (!name) {
-    res.sendStatus(400);
-  } else {
-    items.insertProduct(name, descrip, price, category, email, vendor, (err, results) => {
-      if (err) {
-        res.sendStatus(500);
-      } else {
-        res.status(200).json(results);
-      }
-    });
-  }
+ let name = req.body.name;
+ let descrip = req.body.descrip;
+ let price = req.body.price;
+ let category = req.body.category;
+ let email = req.body.email;
+ let vendor = req.body.vendor;
+ console.log(name);
+ if (!name) {
+   res.sendStatus(400);
+ } else {
+   item.insertProduct(name, descrip, price, category, email, vendor, (err, results) => {
+     if (err) {
+       res.sendStatus(500);
+     } else {
+       res.status(200).json(results);
+     }
+   });
+ }
 });
 
 
 
 app.listen(3000, function() {
-  console.log('listening on port 3000!');
+ console.log('listening on port 3000!');
 });

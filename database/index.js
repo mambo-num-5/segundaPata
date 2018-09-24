@@ -74,9 +74,26 @@ const insertProduct = function(name, descrip, price, category, email, vendor, ca
   );
 };
 
+const insertLikes = function(likes, callback) {
+  console.log("hi",likes)
+  console.log("quiubo desde la db");
+  connection.query(
+    'INSERT INTO likeSaver (likes) VALUES (?)',
+    [likes],
+    (err, results, fields) => {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(results);
+        callback(null, results);
+      }
+    }
+  );
+};
 
 
 
+module.exports.insertLikes = insertLikes;
 module.exports.selectAll = selectAll;
 module.exports.selectToys = selectToys;
 module.exports.insertProduct = insertProduct;
