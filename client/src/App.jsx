@@ -9,6 +9,7 @@ import Error from "./components/item-page/error.js";
 import Navigation from "./components/item-page/navigation.js";
 import Home from "./home.jsx";
 
+
 class App extends Component {
   render() {
     return (
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/item/:id" component={ItemPage} />
             <Route path="/Upload" component={UploadProduct} />
+
             <Route  component={Error} />
           </Switch>
           <Footer/>

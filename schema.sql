@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS segundaPata;
+ DROP DATABASE IF EXISTS segundaPata;
 
 CREATE DATABASE segundaPata;
 
@@ -13,6 +13,7 @@ CREATE TABLE items (
   email varchar(50) NOT NULL,
   vendor varchar(50) NOT NULL,
   PRIMARY KEY (ID)
+
 );
 
 /*  Execute this file from the command line by typing:
