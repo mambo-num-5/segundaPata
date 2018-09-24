@@ -1,6 +1,7 @@
 import React from "react";
 //import Home from "./home.jsx";
 import $ from "jquery";
+import MyUploader from "./imageuploader.jsx"
 
 class UploadProduct extends React.Component {
   constructor(props) {
@@ -170,6 +171,9 @@ class UploadProduct extends React.Component {
         <br />
         <button onClick={this.submitItem}>¡Añadir Producto!</button>
         </center>
+        <div>
+          <MyUploader/>
+        </div>
 
       </div>
     );
